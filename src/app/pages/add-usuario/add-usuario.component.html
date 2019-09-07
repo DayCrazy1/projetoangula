@@ -12,12 +12,12 @@
         </div>
         <div class="form-group">
                 <label for=""></label>
-                <input type="text" class="form-control" [(ngNodel)]="usuario.pws" placeholder="Senha">
-                <smaill class="form-text text-muted"></smaill>
+                <input type="password" class="form-control" [(ngNodel)]="conf" placeholder="Confirmar senha" name="conf" required #conf="ngNodel">
+                 <smaill class="form-text text-danger" *ngIf="pws.value != conf.value">senhas diferentes</smaill>
         </div>
-        <div class="form-group">
-              <button type="submit" class="btn btn-primary">Salvar</button>
-              <button type="submit" class="btn btn-primary">Cancelar</button>
+        <div class="form-group text-right">
+              <button type="submit" class="btn btn-primary ml-2" [disablet] ="fc.invalid || pws.value != conf.value">Salvar</button>
+              <button type="reset" class="btn btn-primary ml-2">Cancelar</button>
         </div>
 
 </form>
