@@ -1,22 +1,22 @@
 <section class="container">
-<form>
+<form #fc=ngForm (ngSubmit)="onSubmit(fc)">
         <div class="form-group">
         <label for=""></label>
-        <input type="text" class="form-control" [(ngNodel)]="usuario.nome" placeholder="Nome">
-        <smaill class="form-text text-muted"></smaill>
+        <input type="text" class="form-control" [(ngModel)]="usuario.nome" placeholder="Nome">
+        
         </div>
         <div class="form-group">
             <label for=""></label>
-            <input type="text" class="form-control" [(ngNodel)]="usuario.email" placeholder="E-mail">
-            <smaill class="form-text text-muted"></smaill>
+            <input type="text" class="form-control" [(ngModel)]="usuario.email" placeholder="E-mail">
+           
         </div>
         <div class="form-group">
                 <label for=""></label>
-                <input type="password" class="form-control" [(ngNodel)]="conf" placeholder="Confirmar senha" name="conf" required #conf="ngNodel">
-                 <smaill class="form-text text-danger" *ngIf="pws.value != conf.value">senhas diferentes</smaill>
+                <input type="password" class="form-control" [(ngModel)]="conf" placeholder="Confirmar senha" name="conf" required #conf="ngModel">
+                 <small class="form-text text-danger" *ngIf="pws.value != conf.value">senhas diferentes</small>
         </div>
         <div class="form-group text-right">
-              <button type="submit" class="btn btn-primary ml-2" [disablet] ="fc.invalid || pws.value != conf.value">Salvar</button>
+              <button type="submit" class="btn btn-primary ml-2" [disabled] ="fc.invalid || pws.value != conf.value">Salvar</button>
               <button type="reset" class="btn btn-primary ml-2">Cancelar</button>
         </div>
 
