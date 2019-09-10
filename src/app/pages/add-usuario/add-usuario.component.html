@@ -2,17 +2,17 @@
 <form #fc=ngForm (ngSubmit)="onSubmit(fc)">
         <div class="form-group">
         <label for=""></label>
-        <input type="text" class="form-control" [(ngModel)]="usuario.nome" placeholder="Nome">
+        <input type="text" class="form-control" [(ngModel)]="usuario.nome" name="nome" placeholder="Nome">
         
         </div>
         <div class="form-group">
             <label for=""></label>
-            <input type="text" class="form-control" [(ngModel)]="usuario.email" placeholder="E-mail">
+            <input type="text" class="form-control" [(ngModel)]="usuario.email" name="email" placeholder="E-mail">
            
         </div>
         <div class="form-group">
                 <label for=""></label>
-                <input type="password" class="form-control" [(ngModel)]="conf" placeholder="Confirmar senha" name="conf" required #conf="ngModel">
+                <input type="password" class="form-control" (ngModel)="conf" placeholder="Confirmar senha" name="conf" required #conf="ngModel">
                  <small class="form-text text-danger" *ngIf="pws.value != conf.value">senhas diferentes</small>
         </div>
         <div class="form-group text-right">
